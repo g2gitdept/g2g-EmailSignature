@@ -1,0 +1,132 @@
+// Mixins
+.box_sizing(@definition) {
+	-moz-box-sizing: @definition;
+	-webkit-box-sizing: @definition;
+	box-sizing: @definition;
+}
+
+.border_radius (@radius) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+
+.transition(@definition) {
+	transition: @definition;
+	-moz-transition: @definition;
+	-ms-transition: @definition;
+	-webkit-transition: @definition;
+}
+
+.transition_property(@definition) {
+	transition-property: @definition;
+	-moz-transition-property: @definition;
+	-ms-transition-property: @definition;
+	-webkit-transition-property: @definition;
+}
+
+.transition_duration(@definition) {
+	transition-duration: @definition;
+	-moz-transition-duration: @definition;
+	-ms-transition-duration: @definition;
+	-webkit-transition-duration: @definition;
+}
+
+.transition_timing(@definition) {
+	transition-timing-function: @definition;
+	-moz-transition-timing-function: @definition;
+	-ms-transition-timing-function: @definition;
+	-webkit-transition-timing-function: @definition;
+}
+
+.transition_all_args(@property, @duration, @timing) {
+	.transition_property(@property);
+	.transition_duration(@duration);
+	.transition_timing(@timing);
+}
+
+.transform(@definition) {
+	transform: @definition;
+	-ms-transform: @definition;
+	-webkit-transform: @definition;
+	-o-transform: @definition;
+	-moz-transform:@definition;
+}
+
+.css_columns(@count, @gap, @rule: none) {
+	column-count: @count;
+	-ms-column-count: @count;
+	-webkit-column-count: @count;
+	-o-column-count: @count;
+	-moz-column-count:@count;
+	
+	column-gap: @gap;
+	-ms-column-gap: @gap;
+	-webkit-column-gap: @gap;
+	-o-column-gap: @gap;
+	-moz-column-gap:@gap;
+	
+	column-rule: @rule;
+	-ms-column-rule: @rule;
+	-webkit-column-rule: @rule;
+	-o-column-rule: @rule;
+	-moz-column-rule:@rule;
+}
+
+.clearfix() {
+	display: inline-block;
+	&:after {
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0;
+	}
+	html[xmlns] & {
+		display: block;
+	}
+	* html & {
+		height: 1%;
+	}
+}
+
+.image_replace(@image, @width, @height, @x: left, @y: top) {
+	background: url("../images/@{image}") no-repeat @x @y;
+	display: block;
+	height: @height;
+	overflow: hidden;
+	position: relative;
+	text-indent: 100%;
+	width: @width;
+	white-space: nowrap;
+}
+
+.box_shadow(@definition) {
+	-webkit-box-shadow: @definition;
+	-moz-box-shadow: @definition;
+	box-shadow: @definition;
+}
+
+.text_shadow(@definition) {
+	-webkit-text-shadow: @definition;
+	-moz-text-shadow: @definition;
+	text-shadow: @definition;
+}
+
+.horizontal_nav() {
+	.clearfix();
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	li, a {
+		display: block;
+		float: left;
+	}
+}
+
+.vertical_center(@height, @line_height) {
+	height: @height;
+	line-height: @line_height;
+	vertical-align: middle;
+}
