@@ -1,5 +1,5 @@
 <div class="iframe_holder">
-    <iframe id="signature-iframe" style="width:500px;height:240px;border:none;" src="https://homebase.good2grow.com/assets/api/signature-temp?e_email=<?php echo $_GET['e_email']; ?>&e_topper=<?php echo $_GET['e_topper']; ?>&e_name=<?php echo $_GET['e_name']; ?>&e_title=<?php echo $_GET['e_title']; ?>&e_phone=<?php echo $_GET['e_phone']; ?>"></iframe>
+    <iframe id="signature-iframe" style="width:500px;height:240px;border:none;" src="https://emailsignature.good2grow.com/sig.php?e_email=<?php echo $_GET['e_email']; ?>&e_topper=<?php echo $_GET['e_topper']; ?>&e_name=<?php echo $_GET['e_name']; ?>&e_title=<?php echo $_GET['e_title']; ?>&e_phone=<?php echo $_GET['e_phone']; ?>"></iframe>
 </div>
 <div>
     <a class="button" onclick="copyIframeContent()">Copy Signature <i class="fa-solid fa-signature"></i></a>

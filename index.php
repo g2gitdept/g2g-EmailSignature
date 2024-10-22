@@ -11,13 +11,11 @@
 	<meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
 	<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
-	<script src="js/jquery.js"></script>
-	<script src="js/global.js"></script>
 </head>
 <body>
   <div id="container">
     <h1>Email Signature Generator</h1>
-    <form method="get" action="sig.php">
+    <form method="get" action="sig-config.php">
       <fieldset>
         <div class="row">
           <label for="e_topper">Your Topper</label>
@@ -87,59 +85,6 @@
         <button type="submit">Submit</button>
       </fieldset>
     </form>
-    <h2>Design: click into iframe and select all + copy</h2>
-    <iframe id="iframe_holder"></iframe>
-    <div>
-    <a class="button" onclick="copyIframeContent()">Copy Signature <i class="fa-solid fa-signature"></i></a>
-    <a class="button" onclick="copyIframeHTML()">Copy Markdown <i class="fa-solid fa-code"></i></a>
-    </div>
-    <script>
-    function copyIframeContent() {
-
-    var iframe = document.getElementById('iframe_holder');
-    
-    var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-
-    var range = iframeDoc.createRange();
-    range.selectNodeContents(iframeDoc.body);
-    var selection = iframeDoc.getSelection();
-    selection.removeAllRanges();
-    selection.addRange(range);
-
-    
-    try {
-        var successful = iframeDoc.execCommand('copy');
-        if (successful) {
-            alert('Signature copied to clipboard!');
-        } else {
-            alert('Failed to copy signature content.');
-        }
-        } catch (err) {
-            alert('Error copying signature content: ' + err);
-        }
-
-    
-    selection.removeAllRanges();
-}
-
-function copyIframeHTML() {
-    var iframe = document.getElementById('iframe_holder');
-    var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-
-    var htmlContent = iframeDoc.documentElement.outerHTML;
-
-    var tempTextarea = document.createElement('textarea');
-    tempTextarea.value = htmlContent;
-    document.body.appendChild(tempTextarea);
-    tempTextarea.select();
-    document.execCommand('copy');
-    document.body.removeChild(tempTextarea);
-
-        alert('Signature Markdown content copied to clipboard!');
-   }
-</script>
-    <h2>Code</h2>
-    <div id="code_holder"></div>
   </div>
 </body>
 </html>
