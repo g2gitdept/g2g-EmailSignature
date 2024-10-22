@@ -5,13 +5,13 @@
       font-size: 1.1em;
       font-family: 'Gowun Dodum', sans-serif;
       padding: 0 1.2em;
-      background-color: #808080;
-      color: #000000;
+      background-color: #77bc1f;
+      color: #FFFFFF;
       cursor: pointer;
       text-align: center;
       text-decoration: none;
       white-space: nowrap;
-      border: solid 1px #808080;
+      border: solid 1px #77bc1f;
       border-radius: 6px;
       -webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
       -ms-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
